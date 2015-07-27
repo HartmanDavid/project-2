@@ -10,7 +10,7 @@ Assist pet owners via storing pet allergies and cross referencing food ingredien
 Bonus: Can be expanded to treats.
 
 Typical allergy chart:
-![This is the basic allergy report](Typical_allergy_report.pdf)
+![This is the basic allergy report](Typical_allergy_report-page-001.jpg)
 
 ERD:
 ![ERD](ERD_Projec2_ver_1.jpg)
