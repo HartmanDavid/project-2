@@ -10,10 +10,10 @@ Assist pet owners via storing pet allergies and cross referencing food ingredien
 Bonus: Can be expanded to treats.
 
 Typical allergy chart:
-![This is the basic allergy report](/Users/DavidsMacBook/Documents/Workspace/GA/w06/Project_2/Typical_allergy_report.pdf)
+![This is the basic allergy report](Typical_allergy_report.pdf)
 
 ERD:
-![ERD](/Users/DavidsMacBook/Documents/Workspace/GA/w06/Project_2/ERD_Projec2_ver_1.jpg)
+![ERD](ERD_Projec2_ver_1.jpg)
 
 User- They have a log in and can have several pets.
 
@@ -24,10 +24,10 @@ Allergies - A table filled with ingred
 
 
 Landing Page:
-![Home Page Wire Frame](/Users/DavidsMacBook/Documents/Workspace/GA/w06/Project_2/landing_page_project2.png)
+![Home Page Wire Frame](landing_page_project2.png)
 
 Pet Allergy Page:
-![Pet Allergy Page](/Users/DavidsMacBook/Documents/Workspace/GA/w06/Project_2/dog_page_project2.png)
+![Pet Allergy Page](dog_page_project2.png)
 
 
 
