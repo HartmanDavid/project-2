@@ -1,5 +1,5 @@
 MVP:
-A DB to store ingredients for owners.
+A DB to store allergy ingredients for owners.
 
 Expanded Idea:
 Searchable Pet Food Ingredients DB. 
@@ -13,13 +13,13 @@ Typical allergy chart:
 ![This is the basic allergy report](Typical_allergy_report-page-001.jpg)
 
 ERD:
-![ERD](ERD_Projec2_ver_1.jpg)
+![ERD](ERD_Projec2_ver_2.jpg)
 
 User- They have a log in and can have several pets.
 
 Pets - Lacking opposable thumbs, the pet will have one user. Each pet can have many ingredients they are allergic to.
 
-Allergies - A table filled with ingred
+Ingredients - A table filled with ingredients
 
 
 

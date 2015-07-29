@@ -1,0 +1,8 @@
+<h1>Pets#index</h1>
+<% @pets.each do |x| %>
+    Name: <%= x.name %> <br>
+    Age: <%= x.age %><br>
+    Breed: <%= x.breed %><br>
+    Species: <%= x.species %><br>
+<% end %>
+<%= link_to "Edit pet info", edit_pet_path %>

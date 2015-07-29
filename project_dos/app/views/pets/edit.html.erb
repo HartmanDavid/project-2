@@ -1,0 +1,16 @@
+<h1>Pets#edit</h1>
+<div class="temp">
+<%= form_for @pet do |f| %>
+    species: <%= f.text_field :species %>
+    name: <%= f.text_field :name %>
+    age: <%= f.text_field :age %>
+    breed: <%= f.text_field :breed %>
+    <%= f.submit "Add your pet!" %>
+<% end %>
+</div>
+<div class="temp2">
+    <%= link_to 'Remove pet!', :pet, method: :delete, data: {confirm: "Are you sure you want to remove this pet? This can not be undone!"} %>
+<%= link_to 'Back to your pets' %>
+
+
+</div>
