@@ -1,2 +1,7 @@
 <h1>Pets#update</h1>
-<p>Find me in app/views/pets/update.html.erb</p>
+<h1><%= @pet.name %> is your <%= @pet.species %></h1>
+    <p>Sex: <%= @pet.sex %><br/>
+    Age: <%= @pet.age %><br/>
+    Breed: <%= @pet.breed %>
+    </p>
+<%= link_to "back to list", pets_path %>

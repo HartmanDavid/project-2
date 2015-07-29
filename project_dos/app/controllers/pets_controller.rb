@@ -4,9 +4,10 @@ class PetsController < ApplicationController
   end
 
   def create
-      @pet = Pet.new(params.require(:pet))
+      @pet = Pet.new(params.require(:pet).permit(:name, :age, :sex, :species, :breed ))
+      @pet.user = current_user
       if @pet.save
-          redirect_to pets_path
+          redirect_to pet_path(@pet.id)
       else
           flash.now.alert = "Sorry. Information did not save."
           render 'new'
@@ -27,7 +28,7 @@ class PetsController < ApplicationController
 
   def update
       @pet = Pet.find(params[:id])
-      if @pet = Pet.update_attributes(params.require(:pet).permit(:name, :age))
+      if @pet.update_attributes(params.require(:pet).permit( :name, :sex, :breed, :species, :age))
       end
   end
   def destroy

@@ -4,5 +4,5 @@
     Age: <%= x.age %><br>
     Breed: <%= x.breed %><br>
     Species: <%= x.species %><br>
+    <%= link_to "Edit pet info", edit_pet_path(x.id) %><br>
 <% end %>
-<%= link_to "Edit pet info", edit_pet_path %>
