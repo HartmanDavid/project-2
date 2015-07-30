@@ -35,8 +35,7 @@ class PetsController < ApplicationController
   def destroy
       @pet = Pet.where(user_id: current_user.id).find(params[:id])
       @pet.destroy
-      flash.now.alert = "#{Pet.name} has been removed."
       redirect_to pets_path
-
+      flash.now.alert = "#{Pet.name} has been removed." #not working
   end
 end
