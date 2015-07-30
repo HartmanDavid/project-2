@@ -15,11 +15,11 @@ class PetsController < ApplicationController
   end
 
   def edit
-      @pet = Pet.find(params[:id])
+      @pet = Pet.where(user_id: current_user.id).find(params[:id])
   end
 
   def index
-      @pets = Pet.all
+      @pets = current_user.pets #trying to keep proper auth.
   end
 
   def show
