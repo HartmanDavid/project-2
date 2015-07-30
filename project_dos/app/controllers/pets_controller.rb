@@ -35,7 +35,7 @@ class PetsController < ApplicationController
       @pet = Pet.find(params[:id])
       @pet.destroy
       flash.now.alert = "#{Pet.name} has been removed."
-    #   redirect_to pets_path
+      redirect_to pets_path
 
   end
 end
