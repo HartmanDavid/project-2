@@ -23,16 +23,17 @@ class PetsController < ApplicationController
   end
 
   def show
-      @pet = Pet.find(params[:id])
+      @pet = Pet.where(user_id: current_user.id).find(params[:id])
   end
 
   def update
-      @pet = Pet.find(params[:id])
+      @pet = Pet.where(user_id: current_user.id).find(params[:id])
       if @pet.update_attributes(params.require(:pet).permit( :name, :sex, :breed, :species, :age))
+      redirect_to pet_path
       end
   end
   def destroy
-      @pet = Pet.find(params[:id])
+      @pet = Pet.where(user_id: current_user.id).find(params[:id])
       @pet.destroy
       flash.now.alert = "#{Pet.name} has been removed."
       redirect_to pets_path
