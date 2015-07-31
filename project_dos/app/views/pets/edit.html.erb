@@ -1,5 +1,5 @@
 <h1>Pets#edit</h1>
-<div class="temp">
+<div>
 <%= form_for @pet do |f| %>
     species: <%= f.text_field :species %>
     name: <%= f.text_field :name %>
@@ -7,25 +7,26 @@
     breed: <%= f.text_field :breed %>
     sex: <%= f.text_field :sex %>
     <%= f.submit "Edit pet info!" %>
-<% end %>
+
 </div>
-<div class="temp2">
-    <%= link_to 'Remove pet!', :pet, method: :delete, data: {confirm: "Are you sure you want to remove this pet? This can not be undone!"} %>
-<%= link_to 'Back to your pets', pets_path %>
-</div>
+
 
 <h2>Ingredients of Concern</h2>
-<!-- <ul> -->
-  <%= form_for @pet do |f|%>
-
-          <li>
-            <%= check_box_tag 'ingredients', "chicken_bone" %>
-            <%= check_box_tag 'ingredients', "alley_cat" %>
-
-          </li>
-          <%= f.submit "Update Ingredient Concerns!" %>
-
-      <% end %>
-
-
-<!-- </ul> -->
+        <% @pet.ingredient.each do |p| %>
+          <%= f.fields_for p do |i| %>
+            <%= i.label "chicken" %>
+            <%= i.check_box :chicken %>
+            <%= i.label "duck" %>
+            <%= i.check_box :duck %>
+            <%= i.label "turkey" %>
+            <%= i.check_box :turkey %>
+            <%= i.label "beef" %>
+            <%= i.check_box :beef %>
+          <% end %>
+        <% end %>
+  <%= f.submit "Edit your pet info"%>
+<% end %>
+<div >
+    <%= link_to 'Remove pet!', :pet, method: :delete, data: {confirm: "Are you sure you want to remove this pet? This can not be undone!"} %>
+    <%= link_to 'Back to your pets', pets_path %>
+</div>

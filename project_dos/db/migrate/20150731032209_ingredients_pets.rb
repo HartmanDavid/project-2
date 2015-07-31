@@ -1,8 +1,8 @@
 class IngredientsPets < ActiveRecord::Migration
   def change
       create_table :ingredients_pets, :id=> false do |t|
-          t.references :ingredient
-          t.references :pet
+          t.integer :ingredient_id
+          t.integer :pet_id
       end
   end
-end 
+end

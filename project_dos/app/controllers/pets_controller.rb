@@ -7,6 +7,7 @@ class PetsController < ApplicationController
   def create
       @pet = Pet.new(params.require(:pet).permit(:name, :age, :sex, :species, :breed ))
       @pet.user = current_user
+      @ingredients = Ingredient.all
       if @pet.save
           redirect_to pet_path(@pet.id)
       else
@@ -17,11 +18,11 @@ class PetsController < ApplicationController
 
   def edit
       @pet = Pet.where(user_id: current_user.id).find(params[:id])
-      @ingredients = Ingredient.all
+      @ingredient = @pet.ingredients.first
   end
 
   def index
-      @pets = current_user.pets #trying to keep proper auth.
+      @pets = current_user.pets 
       @ingredients = Ingredient.all
   end
 
