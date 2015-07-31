@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-
   root to: "users#index"
-  delete '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :index, :show]
-  resources :pets
+  resources :users, only: [:new, :create, :index, :show] do
+   resources :pets
+  end
   resources :ingredients
 
   # The priority is based upon order of creation: first created -> highest priority.

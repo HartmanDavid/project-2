@@ -1,8 +1,12 @@
 <h1>Your Pets</h1>
-<% @pets.each do |x| %>
-    Name: <%= x.name %> <br>
-    Age: <%= x.age %><br>
-    Breed: <%= x.breed %><br>
-    Species: <%= x.species %><br>
-    <%= link_to "Edit pet info", edit_pet_path(x.id) %><br>
-<% end %>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <% @pets.each do |x| %>
+      <h4>Name: <%= x.name %> </h4>
+      <p>Your pup is <%= x.age %> years young. Comes from the finest of <%= x.breed %> with a splash of<%= x.species %>.</p>
+      <p><%= link_to "Edit pet info", edit_pet_path(x.id) %><br></p>
+    </div>
+  <% end %>
+  </div>

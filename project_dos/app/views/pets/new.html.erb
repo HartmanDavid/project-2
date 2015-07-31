@@ -1,11 +1,4 @@
-<h1>Pets#new</h1>
+<h1>Add your new pet here</h1>
 <div class="temp">
-<%= form_for @pet do |f| %>
-    species: <%= f.text_field :species %>
-    name: <%= f.text_field :name %>
-    sex: <%= f.text_field :sex %>
-    age: <%= f.text_field :age %>
-    breed: <%= f.text_field :breed %>
-    <%= f.submit "Add your pet!" %>
-<% end %>
+<%=render 'pet_form' %>
 </div>

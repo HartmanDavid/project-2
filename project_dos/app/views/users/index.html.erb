@@ -1,12 +1,13 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<% @users.each do |u| %>
-	<p>
-	    <%= u.email %><br>
-        <%=u.password_digest %>
-
-    </p>
-
-<%end%>
-<button type="button" name="button"><%= link_to 'Add Pet', new_pet_path %></button>
-<button type="button" name="button"><%= link_to "Your Pets", pets_path %></button>
+<h1>Admin view current users</h1>
+ <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      <% @users.each do |u| %>
+        <div class="col-md-4">
+          <h2><%= u.email %></h2>
+          <%= link_to 'Add Pet', new_user_pet_path(u), class: "btn btn-default" %>
+          <%= link_to "Your Pets", user_pets_path(u), class: "btn btn-default"  %>
+        </div>
+      </div>
+      <%end%>
+<div>

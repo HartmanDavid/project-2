@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 20150731032209) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "ingredients_pets", id: false, force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "pet_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"

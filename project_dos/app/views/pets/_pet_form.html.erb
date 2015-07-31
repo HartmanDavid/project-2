@@ -1,0 +1,8 @@
+<%= form_for(@user, Pet.new) do |f| %>
+    <%= f.text_field :species %>
+    <%= f.text_field :name %>
+    <%= f.text_field :sex %>
+    <%= f.text_field :age %>
+    <%= f.text_field :breed %>
+    <%= f.submit "Add your pet!" %>
+<% end %>
