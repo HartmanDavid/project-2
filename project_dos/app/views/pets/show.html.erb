@@ -1,5 +1,7 @@
-<h1>Your Fur Ball</h1>
-<h1><%= @pet.name %> is your <%= @pet.species %></h1>
+<% unless @pet %>
+<h1>You don't have any pets at this time.</h1>
+<% end %>
+<h3><%= @pet.name %> is your <%= @pet.species %></h3>
     <p>Sex: <%= @pet.sex %><br/>
     Age: <%= @pet.age %> <br/>
     Breed: <%= @pet.breed %>

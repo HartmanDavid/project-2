@@ -1,8 +1,17 @@
 <h1>Your Pets</h1>
+    <% if @pets.empty? %>
+        <div class="">
+            <h3><span>You don't have any pets in your account.</span></h3>
+        </div>
+    <% end %>
+
 <% @pets.each do |x| %>
     Name: <%= x.name %> <br>
     Age: <%= x.age %><br>
     Breed: <%= x.breed %><br>
     Species: <%= x.species %><br>
     <%= link_to "Edit pet info", edit_pet_path(x.id) %><br>
+
 <% end %>
+
+<%= link_to "Add A Pet", new_pet_path %>

@@ -3,7 +3,7 @@
 <%= form_for (@ingredient) do |i| %>
     Ingredient Name <%= i.text_field :name %>
     <%= i.submit "Add Ingredient" %>
-    
+
 <% end %>
 
-<%= link_to 'Back to ingredients list', ingredients_path %>
+<button type="button" name="button" class="btn btn-primary"><%= link_to 'Back to ingredients list', ingredients_path %></button>

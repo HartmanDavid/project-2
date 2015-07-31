@@ -5,23 +5,77 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-    <% flash.each do |name, message| %>
-        <div class="flash-message flash-message-<%= name %>">
-            <%= message %>
+<% unless flash.empty? %>
+   <div class="alert alert-info" role="alert">
+        <% flash.each do |name, message| %>
+            <div class="flash-message flash-message-<%= name %>"><%= message %>
+        <% end %>
+            </div>
+    </div>
+    <% end %>
+
+
+
+
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<%= root_path %>">PetERgies</a>
         </div>
-        
-   <% end %>
 
-    <% if current_user %>
-   	<p>You are logged in as: <%= current_user.email %></p>
-    <%= link_to 'Logout',session_path(session), method: :delete, data: {confirm: "Are you sure?"}%>
-    <%else%>
-        <%= link_to "Please Login", new_session_path %>
-    <%end%>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="<%= petergies_faq_path %>">FAQ <span class="sr-only">(current)</span></a></li>
+            <li><a href="<%= petergies_about_path %>">ABOUT</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PETS <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="<%= root_path %>">Pets</a></li>
+                <li><a href="#">Foods</a></li>
+                <li><a href="https://dog-matching-app-chloe.herokuapp.com/">Adopt</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="<%= new_ingredient_path %>">Petergies</a></li>
 
-    <%= yield %>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                    <% if current_user %>
+                <a href="<%= user_path(current_user) %>">
+                    You are logged in as: <%= current_user.email %>
+            </a></li>
+            <li class="dropdown">
+                <%= link_to 'Logout',session_path(session), method: :delete, data: {confirm: "Are you sure?"}%>
+                <%else%>
+                <%= link_to "Please Login", new_session_path %>
+            <%end%>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+    <div class="jumbotron">
+
+      <p><%= yield %></p>
+    </div>
+
 
 </body>
 </html>

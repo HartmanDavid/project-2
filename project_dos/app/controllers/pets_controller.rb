@@ -3,7 +3,7 @@ class PetsController < ApplicationController
   def new
       @pet = Pet.new
   end
-
+  
   def create
       @pet = Pet.new(params.require(:pet).permit(:name, :age, :sex, :species, :breed ))
       @pet.user = current_user

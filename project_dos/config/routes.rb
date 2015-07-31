@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: "users#index"
+  get 'petergies/about'
+  get 'petergies/contact'
+  get 'petergies/faq'
+
+  root to: "pets#index"
   delete '/logout' => 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :index, :show]

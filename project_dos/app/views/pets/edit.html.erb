@@ -14,18 +14,15 @@
 <%= link_to 'Back to your pets', pets_path %>
 </div>
 
-<h2>Ingredients of Concern</h2>
+<h2>PetERgies of Concern!</h2>
 <!-- <ul> -->
-  <%= form_for @pet do |f|%>
-
+  <%= form_tag edit_pet_path do |f|%>
+      <% @ingredients.each do |i| %>
           <li>
-            <%= check_box_tag 'ingredients', "chicken_bone" %>
-            <%= check_box_tag 'ingredients', "alley_cat" %>
-
+            <%= check_box_tag i.name, {:checked => false}%>
+            <%= i.name%>
           </li>
-          <%= f.submit "Update Ingredient Concerns!" %>
-
       <% end %>
-
+  <% end %>
 
 <!-- </ul> -->
