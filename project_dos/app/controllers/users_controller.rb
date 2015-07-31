@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   end
   def index
       @users = User.all
+  #
+    if session[:user_id]
+      @pets = Pet.all
+    end
   end
   def create
       @user = User.new user_params

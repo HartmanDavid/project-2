@@ -2,7 +2,10 @@
 <% @ingredients.each do |i| %>
     <p>
         Ingredient Name <%= i.name %>
+        <%= link_to 'Edit Ingredient', edit_ingredient_path(i) %>
     </p>
 <% end %>
 
-<%= link_to 'Add New Ingredient', new_ingredient_path %> <br>
+<p>
+<%= link_to 'Add Ingredient', new_ingredient_path %> <br>
+</p>

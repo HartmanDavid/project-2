@@ -1,2 +1,6 @@
 <h1>Ingredients#edit</h1>
-<p>Find me in app/views/ingredients/edit.html.erb</p>
+<%= form_for @ingredient do|i|%>
+    Ingredient Name: <%= i.text_field :name %>
+    <%= i.submit "Submit" %>
+    <% end %>
+<%= link_to "Delete this Ingredient", :ingredient, method: :delete, data:{confirm: "Would you like to delete this ingredient from the data base?"} %>

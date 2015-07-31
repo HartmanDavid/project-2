@@ -3,11 +3,7 @@
 <%= form_for (@ingredient) do |i| %>
     Ingredient Name <%= i.text_field :name %>
     <%= i.submit "Add Ingredient" %>
-    <% if @ingredient.save %>
-        <%= flash.now.alert = 'Ingredient Added' %>
-    <% else %>
-        <%= flash.now.alert = 'Error. Not saved' %>
-    <% end %>
+    
 <% end %>
 
 <%= link_to 'Back to ingredients list', ingredients_path %>

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_path, notice:  "Hi #{user.email}! You are logged in."
         else
-            flash.now.alert = 'Incorrect email and password. You are not logged in.'
+            flash.alert = 'Incorrect email and password. You are not logged in.'
             render 'new'
         end
   end

@@ -4,7 +4,9 @@
 	<p>
 	    <%= u.email %><br>
         <%=u.password_digest %>
-		<%= link_to 'Add Pet', new_pet_path %>
+
     </p>
 
 <%end%>
+<button type="button" name="button"><%= link_to 'Add Pet', new_pet_path %></button>
+<button type="button" name="button"><%= link_to "Your Pets", pets_path %></button>

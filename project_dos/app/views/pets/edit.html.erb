@@ -12,6 +12,20 @@
 <div class="temp2">
     <%= link_to 'Remove pet!', :pet, method: :delete, data: {confirm: "Are you sure you want to remove this pet? This can not be undone!"} %>
 <%= link_to 'Back to your pets', pets_path %>
-
-
 </div>
+
+<h2>Ingredients of Concern</h2>
+<!-- <ul> -->
+  <%= form_for @pet do |f|%>
+
+          <li>
+            <%= check_box_tag 'ingredients', "chicken_bone" %>
+            <%= check_box_tag 'ingredients', "alley_cat" %>
+
+          </li>
+          <%= f.submit "Update Ingredient Concerns!" %>
+
+      <% end %>
+
+
+<!-- </ul> -->
